@@ -53,3 +53,4 @@ def download_group_log_dag():
 
 
 dag = download_group_log_dag()
+
