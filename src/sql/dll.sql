@@ -24,9 +24,9 @@ CREATE TABLE STV202506163__DWH.l_user_group_activity
 );
 
 ALTER TABLE STV202506163__DWH.l_user_group_activity
-    ADD CONSTRAINT fk_uga_users_hk_user_id
+    ADD CONSTRAINT fk_users_hk_user_id
     FOREIGN KEY (hk_user_id) REFERENCES STV202506163__DWH.h_users(hk_user_id);
 
 ALTER TABLE STV202506163__DWH.l_user_group_activity
-    ADD CONSTRAINT fk_uga_groups_hk_group_id
+    ADD CONSTRAINT fk_groups_hk_group_id
     FOREIGN KEY (hk_group_id) REFERENCES STV202506163__DWH.h_groups(hk_group_id);
