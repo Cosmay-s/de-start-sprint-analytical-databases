@@ -30,3 +30,23 @@ ALTER TABLE STV202506163__DWH.l_user_group_activity
 ALTER TABLE STV202506163__DWH.l_user_group_activity
     ADD CONSTRAINT fk_groups_hk_group_id
     FOREIGN KEY (hk_group_id) REFERENCES STV202506163__DWH.h_groups(hk_group_id);
+
+
+DROP TABLE IF EXISTS STV202506163__DWH.s_auth_history;
+
+CREATE TABLE STV202506163__DWH.s_auth_history
+(
+   hk_l_user_group_activity INT,
+   user_id_from INT,
+   event VARCHAR(10),
+   event_dt TIMESTAMP,
+   load_dt TIMESTAMP NOT NULL,
+   load_src VARCHAR(20)
+);
+
+ALTER TABLE STV202506163__DWH.s_auth_history
+ADD CONSTRAINT fk_auth_hist_uga
+FOREIGN KEY (hk_l_user_group_activity)
+REFERENCES STV202506163__DWH.l_user_group_activity(hk_l_user_group_activity);
+
+
